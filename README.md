@@ -2,14 +2,10 @@
 
 Firstly, we need to set up the libraries that in requirements files.
 
-```python
-pip install django
-pip install steem-connect
-```
-
 after we need to set up this project.
 
 ```python
+pip install -r requirements.txt
 pip install steemconnect_auth
 ```
 

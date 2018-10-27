@@ -1,1 +1,2 @@
-steem-connect
+django==2.0.8
+steem-connect==0.7.6
