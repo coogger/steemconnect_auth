@@ -40,7 +40,7 @@ class LoginSignup(View):
                 access_token = access_token,
                 refresh_token = refresh_token
                 ).save()
-        login(request,user)
+        login(request,user, backend="django.contrib.auth.backends.ModelBackend")
         return HttpResponseRedirect(settings.LOGIN_REDIRECT)
 
 

@@ -29,6 +29,10 @@ SCOPE = None
 CODE = True
 LOGIN_REDIRECT = "/web/feed/"
 ##steemconnect settings
+AUTHENTICATION_BACKENDS = [
+    "steemconnect_auth.auth.steemconnect.SteemConnectBackend",
+    "django.contrib.auth.backends.ModelBackend",
+]
 ```
 You should type **REDIRECT_URL** as in the photo below.
 
