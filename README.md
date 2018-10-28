@@ -1,3 +1,7 @@
+[Join and Contact us on Discord](https://discord.gg/avmdZJa)
+
+------
+
 #### How to use this project in my project ?
 
 Firstly, we need to set up the libraries that in requirements files.
