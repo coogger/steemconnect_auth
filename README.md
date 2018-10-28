@@ -71,6 +71,14 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 ```
 
+##### if access_token expires, you should use this function should be used.
+
+```python
+from steemconnect_auth.models import SteemConnectUser
+
+steem_connect_user = SteemConnectUser.objects.filter(user="username")
+new_access_token = steem_connect_user.update_access_token("your app secret")
+```
 
 #### Let's place URLs in a template
 
