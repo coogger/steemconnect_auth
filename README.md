@@ -67,7 +67,7 @@ import django_steemconnect
 
 urlpatterns = [
     url(r"^",include("myapp.urls")),
-    url(r"^accounts/", include('django_steemconnect.urls')), # signup, login or create new user
+    url(r"^accounts/", include('steemconnect_auth.urls')), # signup, login or create new user
     url(r'^web/admin/', admin.site.urls), # admin panel
 ]
 
