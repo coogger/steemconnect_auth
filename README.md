@@ -63,7 +63,7 @@ and finally, add the django_steemconnect URLs to the list of your project URLs.
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
-import django_steemconnect
+import steemconnect_auth
 
 urlpatterns = [
     url(r"^",include("myapp.urls")),

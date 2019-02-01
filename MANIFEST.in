@@ -1,2 +1,3 @@
 include README.md
 recursive-include steemconnect_auth/migrations *
+recursive-include steemconnect_auth/auth *
