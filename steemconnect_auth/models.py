@@ -9,6 +9,9 @@ class SteemConnectUser(models.Model):
     refresh_token = models.CharField(max_length = 500,help_text = "steemconnect user code / to get get_refresh_token")
     code = models.CharField(max_length = 500,help_text = "steemconnect user code / to get get_refresh_token")
     access_token = models.CharField(max_length = 500,help_text = "steemconnect user access_token to any operations")
+    
+    def __str__(self):
+        return self.user
 
     def update_access_token(self, secret):
         "This function should be used if access_token expires."
