@@ -21,13 +21,14 @@ Set up your Django project and open your project's settings.py file, you must se
 
 ```python
 ##steemconnect settings
-REDIRECT_URL = "http://www.coogger.com/accounts/steemconnect/"
-CLIENT_ID = "coogger.app"
-APP_SECRET = "your app secret"
-SCOPE = None
-# default scopes ="login,offline,vote,comment,delete_comment,comment_options,custom_json,claim_reward_balance"
-CODE = True
-LOGIN_REDIRECT = "/web/feed/"
+STEEMCONNECT_AUTH_CONFIGS = dict(
+    redirect_url="http://www.coogger.com/accounts/steemconnect/",
+    client_id="coogger.app",
+    app_secret="your app secret",
+    scope="login,offline,vote,comment,delete_comment,comment_options,custom_json,claim_reward_balance",
+    code=True,
+    login_redirect="/",
+)
 ##steemconnect settings
 AUTHENTICATION_BACKENDS = [
     "steemconnect_auth.auth.steemconnect.SteemConnectBackend",
@@ -63,7 +64,6 @@ and finally, add the django_steemconnect URLs to the list of your project URLs.
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
-import steemconnect_auth
 
 urlpatterns = [
     url(r"^",include("myapp.urls")),
