@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="steemconnect_auth",
-    version='0.0.3',
+    version='0.0.4',
     description='A django application to login with steemconnect.',
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",

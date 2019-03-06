@@ -1,7 +1,7 @@
 #django
 from django.http import HttpResponseRedirect,HttpResponse
 from django.contrib import messages as ms
-from django.contrib.auth import logout,login
+from django.contrib.auth import logout, login
 from django.views import View
 from django.contrib.auth.models import User
 from django.conf import settings
