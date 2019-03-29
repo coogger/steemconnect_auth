@@ -8,6 +8,7 @@ import requests
 class SteemConnectBackend:
 
     def authenticate(self, request, username=None, password=None):
+        username = username.lower()
         if requests.get(f"https://steemit.com/@{username}").status_code != 200:
             raise Http404
         user_model = get_user_model()
