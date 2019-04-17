@@ -34,6 +34,12 @@ AUTHENTICATION_BACKENDS = [
     "steemconnect_auth.auth.steemconnect.SteemConnectBackend",
     "django.contrib.auth.backends.ModelBackend",
 ]
+
+# if you want to access in any template this STEEMCONNECT_AUTH_CONFIGS
+MIDDLEWARE += ["steemconnect_auth.middleware.steemconnect_auth.SteemConnectAuthMiddleware"]
+# {{ request.steemconnect_auth.client_id }}
+# {{ request.steemconnect_auth.app_secret }}
+
 ```
 You should type **REDIRECT_URL** as in the photo below.
 
