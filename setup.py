@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="steemconnect_auth",
-    version='0.0.7',
+    version='0.0.9',
     description='A django application to login with steemconnect.',
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
@@ -14,11 +14,10 @@ setup(
     url="https://github.com/coogger/django_steemconnect",
     license='MIT',
     zip_safe=False,
-    keywords="steemconnect,django steemconnect,steem,django steem,login steemconnect",
+    keywords="steemconnect, django steemconnect, steem, django steem, login steemconnect",
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 3.5',

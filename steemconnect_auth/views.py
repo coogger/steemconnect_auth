@@ -1,5 +1,5 @@
 #django
-from django.http import HttpResponseRedirect,HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib import messages as ms
 from django.contrib.auth import logout, login
 from django.views import View
@@ -12,9 +12,8 @@ from steemconnect_auth.models import SteemConnectUser
 # python steemconnect-client
 from steemconnect.client import Client
 
-import random
-
 config = settings.STEEMCONNECT_AUTH_CONFIGS
+
 
 class LoginSignup(View):
     client = Client(client_id = config.get("client_id"),

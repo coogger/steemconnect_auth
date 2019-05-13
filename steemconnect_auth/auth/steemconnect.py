@@ -1,15 +1,14 @@
 # django
-from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 from django.http import Http404
-from django.contrib.auth import login
 import requests
 
 class SteemConnectBackend:
+    steem_api_url = "https://api.steemjs.com/lookup_account_names?accountNames=%5B%22{}%22%5D"
 
     def authenticate(self, request, username=None, password=None):
         username = username.lower()
-        if requests.get(f"https://steemit.com/@{username}").status_code != 200:
+        if requests.get(self.steem_api_url.format(username)).status_code != 200:
             raise Http404
         user_model = get_user_model()
         user, created = user_model.objects.get_or_create(username=username)
