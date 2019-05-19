@@ -29,11 +29,6 @@ STEEMCONNECT_AUTH_CONFIGS = dict(
     code=True,
     login_redirect="/",
 )
-##steemconnect settings
-AUTHENTICATION_BACKENDS = [
-    "steemconnect_auth.auth.steemconnect.SteemConnectBackend",
-    "django.contrib.auth.backends.ModelBackend",
-]
 
 # if you want to access in any template this STEEMCONNECT_AUTH_CONFIGS
 MIDDLEWARE += ["steemconnect_auth.middleware.steemconnect_auth.SteemConnectAuthMiddleware"]
