@@ -57,6 +57,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',"
 ]
+
+AUTHENTICATION_BACKENDS = [
+    "steemconnect_auth.auth.steemconnect.SteemConnectBackend",
+    "django.contrib.auth.backends.ModelBackend",
+]
+
+# from django.contrib.auth import authenticate
+# user = authenticate(username=username) 
+# to create and get steem user
 ```
 and finally, add the django_steemconnect URLs to the list of your project URLs.
 
