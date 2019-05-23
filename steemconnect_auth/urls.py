@@ -1,23 +1,23 @@
-from django.conf.urls import url
+from django.urls import path
 from django.views.generic.base import RedirectView
 
 #views
 from steemconnect_auth.views import Logout, LoginSignup
 
 urlpatterns = [
-    url(
-        r"^logout/",
+    path(
+        "login/",
+        LoginSignup.as_view(),
+        name = "login-via-steemconnect"
+    ),
+    path(
+        "logout/",
         Logout.as_view(),
         name = "logout"
     ),
-    url(
-        r"^login/",
-        RedirectView.as_view(url = LoginSignup.client.get_authorize_url(), permanent=False),
-        name = "login"
-    ),
-    url(
-        r"^steemconnect/",
-        LoginSignup.as_view(),
-        name = "steemconnect"
+    path(
+        "",
+        RedirectView.as_view(url=LoginSignup.client.get_authorize_url(), permanent=False),
+        name = "redirect-steemconnect"
     ),
 ]

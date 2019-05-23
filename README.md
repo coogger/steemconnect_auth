@@ -20,14 +20,15 @@ open a new steem application in this address, [https://v2.steemconnect.com/apps/
 Set up your Django project and open your project's settings.py file, you must set the following codes by your project, django_steemconnect uses these settings.
 
 ```python
+
+LOGIN_REDIRECT_URL = "/"
 ##steemconnect settings
 STEEMCONNECT_AUTH_CONFIGS = dict(
-    redirect_url="http://www.coogger.com/accounts/steemconnect/",
+    redirect_url="http://www.coogger.com/accounts/steemconnect/login/",
     client_id="coogger.app",
     app_secret="your app secret",
     scope="login,offline,vote,comment,delete_comment,comment_options,custom_json,claim_reward_balance",
     code=True,
-    login_redirect="/",
 )
 
 # if you want to access in any template this STEEMCONNECT_AUTH_CONFIGS
@@ -58,10 +59,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',"
 ]
 
+# if you added SteemConnectBackend class in AUTHENTICATION_BACKENDS
 AUTHENTICATION_BACKENDS = [
     "steemconnect_auth.auth.steemconnect.SteemConnectBackend",
     "django.contrib.auth.backends.ModelBackend",
 ]
+# and
+# from django.contrib.auth import authenticate
+# user = authenticate(username=username)
+# SteemConnectBackend is check username, steem account existing 
+# and if it's exists save and return the user.
 
 # from django.contrib.auth import authenticate
 # user = authenticate(username=username) 
@@ -77,7 +84,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r"^",include("myapp.urls")),
-    url(r"^accounts/", include('steemconnect_auth.urls')), # signup, login or create new user
+    url(r"^accounts/steemconnect/", include('steemconnect_auth.urls')), # signup, login or create new user
     url(r'^web/admin/', admin.site.urls), # admin panel
 ]
 
@@ -104,7 +111,7 @@ new_access_token = steem_connect_user.update_access_token("your app secret")
 
 ##### for login operation
 ```
-{% url 'login' %}
+{% url 'redirect-steemconnect' %}
 ```
 
 After all these operations, we must do them for the database settings.

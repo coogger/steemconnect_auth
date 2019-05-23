@@ -29,21 +29,21 @@ class LoginSignup(View):
         access_token = tokens["access_token"]
         refresh_token = tokens["refresh_token"]
         user, created = User.objects.get_or_create(username = username)
-        if SteemConnectUser.objects.filter(user = user).exists():
-            SteemConnectUser.objects.filter(user = user).update(
+        if SteemConnectUser.objects.filter(user=user).exists():
+            SteemConnectUser.objects.filter(user=user).update(
                 code=code,
                 access_token=access_token,
                 refresh_token=refresh_token
-                )
+            )
         else:
             SteemConnectUser(
                 user=user,
                 code=code,
                 access_token=access_token,
                 refresh_token=refresh_token
-                ).save()
+            ).save()
         login(request,user, backend="django.contrib.auth.backends.ModelBackend")
-        return HttpResponseRedirect(config.get("login_redirect"))
+        return HttpResponseRedirect(settings.LOGIN_REDIRECT_URL)
 
 
 class Logout(View):
