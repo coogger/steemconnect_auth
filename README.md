@@ -1,6 +1,8 @@
-[Join and Contact us on Discord](https://discord.gg/avmdZJa)
+# Steemconnect Auth
+A django application to login with steemconnect.
 
-------
+[![MIT License](https://img.shields.io/github/license/coogger/steemconnect_auth.svg)](https://github.com/coogger/steemconnect_auth/blob/master/LICENSE.txt) [![](https://img.shields.io/github/release/coogger/steemconnect_auth.svg)](https://github.com/coogger/steemconnect_auth/releases) ![](https://img.shields.io/github/last-commit/coogger/steemconnect_auth.svg) ![](https://pepy.tech/badge/steemconnect_auth) ![](https://img.shields.io/badge/Code%20style-black-black) ![](https://img.shields.io/badge/code%20style-isort-lightgrey) [![](https://img.shields.io/badge/Unnecessary%20library%20detection-unimport-green)](https://github.com/hakancelik96/unimport)
+
 
 #### How to use this project in my project ?
 
@@ -67,11 +69,11 @@ AUTHENTICATION_BACKENDS = [
 # and
 # from django.contrib.auth import authenticate
 # user = authenticate(username=username)
-# SteemConnectBackend is check username, steem account existing 
+# SteemConnectBackend is check username, steem account existing
 # and if it's exists save and return the user.
 
 # from django.contrib.auth import authenticate
-# user = authenticate(username=username) 
+# user = authenticate(username=username)
 # to create and get steem user
 ```
 and finally, add the django_steemconnect URLs to the list of your project URLs.
