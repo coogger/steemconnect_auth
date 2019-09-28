@@ -1,8 +1,7 @@
 # Steemconnect Auth
 A django application to login with steemconnect.
 
-[![MIT License](https://img.shields.io/github/license/coogger/steemconnect_auth.svg)](https://github.com/coogger/steemconnect_auth/blob/master/LICENSE.txt) [![](https://img.shields.io/github/release/coogger/steemconnect_auth.svg)](https://github.com/coogger/steemconnect_auth/releases) ![](https://img.shields.io/github/last-commit/coogger/steemconnect_auth.svg) ![](https://pepy.tech/badge/steemconnect_auth) ![](https://img.shields.io/badge/Code%20style-black-black) ![](https://img.shields.io/badge/code%20style-isort-lightgrey) [![](https://img.shields.io/badge/Unnecessary%20library%20detection-unimport-green)](https://github.com/hakancelik96/unimport)
-
+[![MIT License](https://img.shields.io/github/license/coogger/steemconnect_auth.svg)](https://github.com/coogger/steemconnect_auth/blob/master/LICENSE) [![releases](https://img.shields.io/github/release/coogger/steemconnect_auth.svg)](https://github.com/coogger/steemconnect_auth/releases) [![last-commit](https://img.shields.io/github/last-commit/coogger/steemconnect_auth.svg)](https://github.com/coogger/steemconnect_auth/commits/master) [![Codacy Badge](https://img.shields.io/codacy/grade/e8c7e5385bbf4855a5cf8d2d46544ad2)](https://www.codacy.com/manual/hakancelik96/steem-connect) [![style](https://img.shields.io/badge/style-black-black)](https://github.com/psf/black) [![style](https://img.shields.io/badge/style-isort-lightgrey)](https://github.com/timothycrosley/isort) [![style](https://img.shields.io/badge/style-unimport-green)](https://github.com/coogger/steemconnect_auth) [![](https://img.shields.io/github/contributors/coogger/steemconnect_auth)](https://github.com/coogger/steemconnect_auth/graphs/contributors) [![](https://pepy.tech/badge/steemconnect_auth)](https://pepy.tech/badge/steemconnect_auth)
 
 #### How to use this project in my project ?
 
